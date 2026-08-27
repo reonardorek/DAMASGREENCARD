@@ -1,0 +1,8 @@
+{
+  "name": "Remix Damas - Green Card",
+  "description": "Consultoria tributária premium especializada em Equiparação Hospitalar e redução legal de impostos para médicos, clínicas e laboratórios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

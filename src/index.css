@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Wine / Deep Burgundy Palette from Brand Identity */
+  --color-wine-950: #260003;
+  --color-wine-900: #3E0005;
+  --color-wine-850: #520007;
+  --color-wine-800: #670008;
+  --color-wine-700: #7A0A13;
+  --color-wine-600: #93131E;
+  --color-wine-500: #B02330;
+  --color-wine-400: #C9424F;
+  --color-wine-300: #DE7580;
+  --color-wine-200: #F0AEB5;
+  --color-wine-100: #FBECEE;
+  --color-wine-50: #FFF5F6;
+
+  /* Midnight Navy / Deep Slate Palette */
+  --color-navy-950: #040810;
+  --color-navy-900: #08101E;
+  --color-navy-850: #0B1629;
+  --color-navy-800: #0F203B;
+  --color-navy-700: #172F56;
+  --color-navy-600: #224379;
+  --color-navy-500: #325EA3;
+
+  /* Gold & Brass Harmonized Accents */
+  --color-gold-50: #FAF8F5;
+  --color-gold-100: #F3ECE2;
+  --color-gold-200: #E6DFD5;
+  --color-gold-300: #D4C6B5;
+  --color-gold-400: #BFAF98;
+  --color-gold-500: #9C8C7D;
+  --color-gold-600: #887869;
+  --color-gold-700: #6D5F52;
+  --color-gold-800: #54493F;
+  --color-gold-900: #3C332B;
+
+  --color-charcoal-950: #050912;
+  --color-charcoal-900: #08101E;
+  --color-charcoal-800: #0E192D;
+  --color-charcoal-700: #172640;
+  --color-charcoal-600: #25395B;
+}
+
+/* Base style adjustments for premium feel */
+html {
+  background-color: #08101E;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: #08101E;
+  color: #0F203B;
+}
+
+::selection {
+  background-color: #670008;
+  color: #FFFFFF;
+}
+
+/* Custom animations for pulsing attention CTA buttons with wine and emerald glowing rings */
+@keyframes button-pulse-wine {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(103, 0, 8, 0.5), 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(103, 0, 8, 0), 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-wine {
+  animation: button-pulse-wine 2.5s infinite ease-in-out;
+}
+
+@keyframes button-pulse-green {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45), 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(16, 185, 129, 0), 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-green {
+  animation: button-pulse-green 2.5s infinite ease-in-out;
+}
+
+.premium-glow {
+  box-shadow: 0 0 40px rgba(103, 0, 8, 0.2);
+}
