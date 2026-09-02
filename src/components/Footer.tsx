@@ -103,15 +103,30 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section: Divider & Legal Information */}
-        <div className="pt-6 border-t border-[#172640] space-y-2 text-left text-[11px] sm:text-xs text-gray-500 font-sans">
-          <p>© 2026 Damas & Lima. Todos os direitos reservados.</p>
-          <div className="flex items-center gap-5 pt-0.5 text-gray-400 text-[11px] sm:text-xs">
-            <a href="#privacidade" className="hover:text-gray-200 transition-colors">
+        <div className="pt-6 border-t border-[#172640] text-center space-y-2 font-sans text-[10px] sm:text-[11px] text-gray-500">
+          <p className="text-gray-400 font-medium">
+            © 2026 Damas & Lima Advocacia · CNPJ 48.591.653/0001–19
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-[10px] sm:text-[11px] text-gray-500">
+            <a href="#privacidade" className="hover:text-gray-300 transition-colors">
               Política de Privacidade
             </a>
-            <a href="#termos" className="hover:text-gray-200 transition-colors">
+            <span className="text-gray-700">|</span>
+            <a href="#termos" className="hover:text-gray-300 transition-colors">
               Termos de Uso
             </a>
+            <span className="text-gray-700">|</span>
+            <span className="text-gray-400">
+              Criado por{" "}
+              <a
+                href="https://www.leorek.com.br/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-red-500 hover:text-red-400 font-semibold transition-colors hover:underline"
+              >
+                Rek Digital
+              </a>
+            </span>
           </div>
         </div>
 

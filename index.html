@@ -4,15 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="theme-color" content="#08101E" />
+    <meta name="description" content="Green Card & Direito Imigratório com Damas & Lima Advocacia Internacional. Estratégia jurídica personalizada para vistos EB-2 NIW, EB-1 e imigração aos EUA." />
+    <meta property="og:title" content="Green Card & Direito Imigratório | Damas & Lima Advocacia" />
+    <meta property="og:description" content="Estratégia jurídica personalizada para vistos EB-2 NIW, EB-1 e conquista do Green Card nos Estados Unidos." />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="format-detection" content="telephone=no" />
     
-    <!-- Preconnect to critical asset domains for lightning-fast asset loading -->
+    <!-- Preconnect & DNS prefetch for critical origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://damaselima.com" />
+    <link rel="preconnect" href="https://damaselima.com" crossorigin />
     <link rel="dns-prefetch" href="https://damaselima.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
+    <!-- Preload Critical LCP Assets for Instant Visual Render -->
+    <link rel="preload" as="image" href="https://damaselima.com/wp-content/uploads/2026/08/hero.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="https://damaselima.com/wp-content/uploads/2026/06/dl-internacional-brasao.png" fetchpriority="high" />
 
     <!-- Google Fonts with display=swap for zero render-blocking -->
     <link
@@ -30,10 +38,12 @@
 
     <title>Green Card & Direito Imigratório | Damas & Lima Advocacia</title>
     
-    <!-- Meta Pixel Code (Non-blocking delayed execution) -->
+    <!-- Meta Pixel Code (Non-blocking idle execution) -->
     <script>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
+      (function() {
+        var loadPixel = function() {
+          if (window.pixelLoaded) return;
+          window.pixelLoaded = true;
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
           n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -44,8 +54,13 @@
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '1509247224261743');
           fbq('track', 'PageView');
-        }, 1500);
-      });
+        };
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(loadPixel, { timeout: 3000 });
+        } else {
+          window.addEventListener('load', function() { setTimeout(loadPixel, 2000); });
+        }
+      })();
     </script>
     <!-- End Meta Pixel Code -->
   </head>

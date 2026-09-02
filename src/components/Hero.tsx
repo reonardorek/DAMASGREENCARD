@@ -47,10 +47,10 @@ export default function Hero({ onCtaClick }: HeroProps) {
           </div>
 
           {/* Main Headline */}
-          <div className="space-y-6 sm:space-y-4 max-w-4xl mx-auto">
-            <h1 className="font-sans text-4xl xs:text-[44px] sm:text-5xl md:text-6xl text-[#0B1629] font-extrabold tracking-tight leading-[1.06] sm:leading-[1.12]">
+          <div className="space-y-4 max-w-4xl mx-auto">
+            <h1 className="font-sans text-[42px] xs:text-[50px] sm:text-5xl md:text-6xl text-[#0B1629] font-extrabold tracking-tight leading-[1.02] sm:leading-[1.12]">
               Seu <span className="whitespace-nowrap">Green Card</span>{" "}
-              <span className="text-[#670008] font-sans font-extrabold block mt-1 sm:mt-2">
+              <span className="text-[#670008] font-sans font-extrabold block mt-0 sm:mt-1">
                 começa com a estratégia certa.
               </span>
             </h1>
