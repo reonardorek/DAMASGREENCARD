@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Identification from "./components/Identification";
@@ -9,8 +9,26 @@ import Faqs from "./components/Faqs";
 import FinalCta from "./components/FinalCta";
 import Footer from "./components/Footer";
 import WhatsAppIcon from "./components/WhatsAppIcon";
+import LegalModal, { LegalDocType } from "./components/LegalModal";
 
 export default function App() {
+  const [legalModalType, setLegalModalType] = useState<LegalDocType>(null);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash === "#privacidade" || hash === "#privacy") {
+        setLegalModalType("privacy");
+      } else if (hash === "#termos" || hash === "#terms") {
+        setLegalModalType("terms");
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   const handleCtaClick = () => {
     window.open(
       "https://wa.me/556199012555?text=Ol%C3%A1!%20Gostaria%20de%20uma%20an%C3%A1lise%20jur%C3%ADdica%20do%20meu%20perfil%20para%20o%20Green%20Card.",
@@ -58,7 +76,14 @@ export default function App() {
       <FinalCta onCtaClick={handleCtaClick} />
 
       {/* RODAPÉ */}
-      <Footer />
+      <Footer onOpenLegal={(type) => setLegalModalType(type)} />
+
+      {/* MODAL DE POLÍTICA DE PRIVACIDADE E TERMOS DE USO */}
+      <LegalModal
+        type={legalModalType}
+        onClose={() => setLegalModalType(null)}
+        onSwitchType={(type) => setLegalModalType(type)}
+      />
     </div>
   );
 }

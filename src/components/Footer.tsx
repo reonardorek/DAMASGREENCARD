@@ -1,11 +1,22 @@
 import React from "react";
 import { Instagram, Linkedin } from "lucide-react";
 
-export default function Footer() {
+interface FooterProps {
+  onOpenLegal?: (type: "privacy" | "terms") => void;
+}
+
+export default function Footer({ onOpenLegal }: FooterProps) {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleLegalClick = (e: React.MouseEvent, type: "privacy" | "terms") => {
+    e.preventDefault();
+    if (onOpenLegal) {
+      onOpenLegal(type);
     }
   };
 
@@ -108,13 +119,19 @@ export default function Footer() {
             © 2026 Damas & Lima Advocacia · CNPJ 48.591.653/0001–19
           </p>
           <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-[10px] sm:text-[11px] text-gray-500">
-            <a href="#privacidade" className="hover:text-gray-300 transition-colors">
+            <button
+              onClick={(e) => handleLegalClick(e, "privacy")}
+              className="hover:text-gray-300 transition-colors cursor-pointer"
+            >
               Política de Privacidade
-            </a>
+            </button>
             <span className="text-gray-700">|</span>
-            <a href="#termos" className="hover:text-gray-300 transition-colors">
+            <button
+              onClick={(e) => handleLegalClick(e, "terms")}
+              className="hover:text-gray-300 transition-colors cursor-pointer"
+            >
               Termos de Uso
-            </a>
+            </button>
             <span className="text-gray-700">|</span>
             <span className="text-gray-400">
               Criado por{" "}
