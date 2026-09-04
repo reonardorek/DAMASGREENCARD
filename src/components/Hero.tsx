@@ -11,11 +11,11 @@ export default function Hero({ onCtaClick }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative bg-white pt-20 pb-4 sm:pt-36 sm:pb-24 text-[#0B1629] border-b border-gray-200/80 overflow-hidden min-h-[100svh] sm:min-h-[580px] flex flex-col justify-between sm:justify-center items-center"
+      className="relative bg-white pt-[68px] pb-4 sm:pt-36 sm:pb-24 text-[#0B1629] border-b border-gray-200/80 overflow-hidden min-h-[100svh] sm:min-h-[580px] flex flex-col justify-between sm:justify-center items-center"
     >
       {/* Hero Background Image with smoky feathered fade (esfumaceado) matching reference - placed below header */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-x-0 top-[70px] sm:top-0 h-[380px] sm:h-full">
+        <div className="absolute inset-x-0 top-[60px] sm:top-0 h-[390px] sm:h-full">
           <img
             src={HERO_BG_IMAGE}
             alt="Damas & Lima Advocacia Internacional"
@@ -37,9 +37,9 @@ export default function Hero({ onCtaClick }: HeroProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center flex flex-col justify-between sm:justify-center flex-1 sm:flex-initial h-full py-2 sm:py-0">
         
         {/* Top/Middle Content Wrapper */}
-        <div className="flex flex-col items-center justify-center my-auto sm:my-0 pt-4 sm:pt-0">
-          {/* Solid Brand Tag Badge - Slim & refined to avoid button confusion */}
-          <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-[#670008] border border-[#830a15] mb-5 sm:mb-6">
+        <div className="flex flex-col items-center justify-center my-auto sm:my-0 pt-0 sm:pt-0">
+          {/* Solid Brand Tag Badge - Slim & refined to avoid button confusion - positioned high on mobile */}
+          <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-[#670008] border border-[#830a15] mt-1 sm:mt-0 mb-14 xs:mb-16 sm:mb-6">
             <Scale className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white/90 shrink-0" />
             <span className="font-sans text-[10px] sm:text-[11px] font-semibold tracking-wider text-white uppercase">
               REALIZE SEU SONHO AMERICANO
@@ -62,7 +62,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
         </div>
 
         {/* Bottom Area: Action CTA positioned safely above the floating WhatsApp icon on mobile, and standard on desktop */}
-        <div className="w-full flex flex-col items-center mt-auto sm:mt-0 pt-6 sm:pt-8 pb-14 sm:pb-0">
+        <div className="w-full flex flex-col items-center mt-auto sm:mt-0 pt-4 sm:pt-8 pb-10 xs:pb-12 sm:pb-0">
           <div className="w-full sm:w-auto max-w-[365px] sm:max-w-none mx-auto">
             <button
               onClick={onCtaClick}

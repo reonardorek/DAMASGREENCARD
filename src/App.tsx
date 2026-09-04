@@ -14,20 +14,32 @@ import LegalModal, { LegalDocType } from "./components/LegalModal";
 export default function App() {
   const [legalModalType, setLegalModalType] = useState<LegalDocType>(null);
 
+  // Clear any persistent hash from previous sessions so the modal never opens automatically on reload
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash === "#privacidade" || hash === "#privacy") {
-        setLegalModalType("privacy");
-      } else if (hash === "#termos" || hash === "#terms") {
-        setLegalModalType("terms");
-      }
-    };
-
-    handleHashChange();
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    if (
+      window.location.hash === "#privacidade" ||
+      window.location.hash === "#privacy" ||
+      window.location.hash === "#termos" ||
+      window.location.hash === "#terms"
+    ) {
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search
+      );
+    }
   }, []);
+
+  const handleCloseLegal = () => {
+    setLegalModalType(null);
+    if (window.location.hash) {
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search
+      );
+    }
+  };
 
   const handleCtaClick = () => {
     window.open(
@@ -81,7 +93,7 @@ export default function App() {
       {/* MODAL DE POLÍTICA DE PRIVACIDADE E TERMOS DE USO */}
       <LegalModal
         type={legalModalType}
-        onClose={() => setLegalModalType(null)}
+        onClose={handleCloseLegal}
         onSwitchType={(type) => setLegalModalType(type)}
       />
     </div>
