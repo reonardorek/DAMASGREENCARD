@@ -36,10 +36,10 @@ export default function Hero({ onCtaClick }: HeroProps) {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center flex flex-col justify-between sm:justify-center flex-1 sm:flex-initial h-full py-2 sm:py-0">
         
-        {/* Top/Middle Content Wrapper */}
-        <div className="flex flex-col items-center justify-center my-auto sm:my-0 pt-0 sm:pt-0">
-          {/* Solid Brand Tag Badge - Slim & refined to avoid button confusion - positioned high on mobile */}
-          <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-[#670008] border border-[#830a15] mt-1 sm:mt-0 mb-14 xs:mb-16 sm:mb-6">
+        {/* Top/Middle Content Wrapper - lowered down on mobile to sit comfortably above the green button */}
+        <div className="flex flex-col items-center justify-center mt-auto sm:my-0 mb-2 sm:mb-0 pt-24 xs:pt-28 sm:pt-0">
+          {/* Solid Brand Tag Badge - Positioned close above headline ("quase encostando no texto de baixo") */}
+          <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-[#670008] border border-[#830a15] mb-2.5 xs:mb-3 sm:mb-6">
             <Scale className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white/90 shrink-0" />
             <span className="font-sans text-[10px] sm:text-[11px] font-semibold tracking-wider text-white uppercase">
               REALIZE SEU SONHO AMERICANO
@@ -47,22 +47,22 @@ export default function Hero({ onCtaClick }: HeroProps) {
           </div>
 
           {/* Main Headline */}
-          <div className="space-y-4 max-w-4xl mx-auto">
-            <h1 className="font-sans text-[42px] xs:text-[50px] sm:text-5xl md:text-6xl text-[#0B1629] font-extrabold tracking-tight leading-[1.02] sm:leading-[1.12]">
+          <div className="max-w-4xl mx-auto sm:space-y-4 pt-0 sm:pt-0">
+            <h1 className="font-sans text-[39px] xs:text-[46px] sm:text-5xl md:text-6xl text-[#0B1629] font-extrabold tracking-tight leading-[1.03] sm:leading-[1.12]">
               Seu <span className="whitespace-nowrap">Green Card</span>{" "}
               <span className="text-[#670008] font-sans font-extrabold block mt-0 sm:mt-1">
                 começa com a estratégia certa.
               </span>
             </h1>
             
-            <p className="font-sans text-base sm:text-base md:text-lg text-gray-700 sm:text-gray-600 max-w-2xl mx-auto font-normal leading-relaxed pt-2 sm:pt-2">
+            <p className="font-sans text-[13.5px] xs:text-[14.5px] sm:text-lg md:text-xl text-gray-700 sm:text-gray-600 max-w-2xl mx-auto font-normal leading-relaxed mt-4 xs:mt-4.5 sm:mt-0 pt-1 sm:pt-0">
               Existem diferentes caminhos para conquistar seu Green Card. A estratégia correta depende da sua formação, experiência profissional e objetivos nos Estados Unidos.
             </p>
           </div>
         </div>
 
         {/* Bottom Area: Action CTA positioned safely above the floating WhatsApp icon on mobile, and standard on desktop */}
-        <div className="w-full flex flex-col items-center mt-auto sm:mt-0 pt-4 sm:pt-8 pb-10 xs:pb-12 sm:pb-0">
+        <div className="w-full flex flex-col items-center mt-0 sm:mt-0 pt-1 sm:pt-8 pb-6 xs:pb-8 sm:pb-0">
           <div className="w-full sm:w-auto max-w-[365px] sm:max-w-none mx-auto">
             <button
               onClick={onCtaClick}
